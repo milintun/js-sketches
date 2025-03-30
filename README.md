@@ -2,8 +2,8 @@
 hosting all .js sketches made with the Octet.js library (similar to p5.js) 
 
 links:
-[city clock](https://milintun.github.io/js-sketches/big_colorful_cityscale_clock/)
-[blue_orange_block_clock](https://milintun.github.io/js-sketches/blue_orange_block_clock/)
+[city clock](https://milintun.github.io/js-sketches/big_colorful_cityscale_clock/) \n
+[blue_orange_block_clock](https://milintun.github.io/js-sketches/blue_orange_block_clock/) \n
 [brown_spiraling_squares_clock](https://milintun.github.io/js-sketches/brown_spiraling_squares_clock/)
 [code_rgb_nodes_clock](https://milintun.github.io/js-sketches/code_rgb_nodes_clock/)
 [color_watch_runningman_clock](https://milintun.github.io/js-sketches/color_watch_runningman_clock/)

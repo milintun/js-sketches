@@ -1,19 +1,12 @@
-
-// function setup() {
-//     let canvas = createCanvas(400, 400); // Adjust as needed
-//   }
-  
-//   function draw() {
-//     background("blue")
-//   }
+let startSecond;
 
 function setup() {
-    let canvas = createCanvas(400, 400); // Adjust as needed
-    // size(400, 400);
+    let canvas = createCanvas(400, 400);
     textFont("Impact")
-    // canvas.parent('canvas-container')
+    startSecond = second();
   }
-  
+
+
   function draw() {
     // beginWatch()
     background("white")
@@ -30,7 +23,9 @@ function setup() {
       translate(centerX, centerY)
       fill("black")
       circle(0, 0, radius1 * 2)
-      let smoothSecond = second() + millis() % 1000 / 1000
+      
+      let smoothSecond = (startSecond + millis() / 1000) % 60
+      console.log(smoothSecond)
       rotate(-radians(map(smoothSecond, 0, 60, -180, 180)))
       push()
         textSize(80)

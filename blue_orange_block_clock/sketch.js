@@ -73,4 +73,6 @@ function draw() {
   fill("white")
   textSize(7)
   text(timeFormat("s"), 350, 402 - remap(second(), 0, 59, 0, 400))
+
+  matte()
 }

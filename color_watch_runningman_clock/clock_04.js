@@ -4,7 +4,6 @@ function setup() {
 }
 
 function draw() {
-  beginWatch()
   clear("white")
   let centerX = 200
   let centerY = 230
@@ -108,8 +107,6 @@ function draw() {
     // body
     line(200, 50, 190, 90)
   }
-  endWatch()
-
 }
 
 

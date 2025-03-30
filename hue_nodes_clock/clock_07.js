@@ -58,8 +58,3 @@ function draw() {
   node([120, 250], shade3, 20, TAU / 48, hour())
   
 }
-
-function mousePressed {
-  randomizeTime()
-}
-

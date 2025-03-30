@@ -1,4 +1,4 @@
-# .js sketches for personal website
+# .js sketches for milinWeb
 hosting all .js sketches made with the Octet.js library (similar to p5.js) 
 
 links:

@@ -33,7 +33,7 @@ function draw() {
     const hum = w.getHumidity();
     const prec = w.getPrecipitationIntensity();
     const cloud = w.getCloudCover();
-    const temp = 80;
+    const temp = 70;
     
     // WIND SIMULATION
     // const wind = w.getWindSpeed();

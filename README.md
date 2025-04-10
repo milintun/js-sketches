@@ -39,6 +39,9 @@ links:
 
 [random_color_nodes_clock](https://milintun.github.io/js-sketches/random_color_nodes_clock/)
 
+[final_weather](https://milintun.github.io/js-sketches/final_weather/)
+
+
 
 
 

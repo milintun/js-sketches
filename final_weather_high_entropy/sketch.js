@@ -29,10 +29,11 @@ function draw() {
   textAlign(CENTER);
 
   if (w.ready) {
-    const temp = w.getApparentTemperature();
+    // const temp = w.getApparentTemperature();
     const hum = w.getHumidity();
     const prec = w.getPrecipitationIntensity();
     const cloud = w.getCloudCover();
+    const temp = 80;
     
     // WIND SIMULATION
     // const wind = w.getWindSpeed();

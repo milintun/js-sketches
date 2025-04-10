@@ -39,7 +39,10 @@ links:
 
 [random_color_nodes_clock](https://milintun.github.io/js-sketches/random_color_nodes_clock/)
 
-[final_weather](https://milintun.github.io/js-sketches/final_weather/)
+[final_weather_realtime](https://milintun.github.io/js-sketches/final_weather_realtime/)
+
+[final_weather_high_entropy](https://milintun.github.io/js-sketches/final_weather_high_entropy/)
+
 
 
 

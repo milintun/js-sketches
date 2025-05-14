@@ -45,6 +45,8 @@ links:
 
 [final_weather_high_entropy](https://milintun.github.io/js-sketches/final_weather_high_entropy/)
 
+[execution_final_transitions](https://milintun.github.io/js-sketches/execution_final_transitions)
+
 
 
 

@@ -19,7 +19,7 @@ function setup() {
   strokeWeight(1)
 
   // get the current weather for SATX latitude and longitude
-  w = requestWeather(29.4252, 98.4946); 
+  w = requestWeather(29.4252, -98.4946); 
 }
 
 

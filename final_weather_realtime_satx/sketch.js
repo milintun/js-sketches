@@ -71,7 +71,7 @@ function calcTempIndex(temp) {
   if (temp <= 65) {
     return remap(temp, 65, -18, 0, 1) ;
   } else if (temp > 65) {
-    return remap(temp, 66, 104, 0, 1);
+    return remap(temp, 66, 115, 0, 1);
   }
 }
 

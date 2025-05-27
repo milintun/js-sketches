@@ -157,7 +157,7 @@ function draw() {
 function navBar() {
     push()
     fill(gray(10));
-    rect(0, 0, 1600, 50);
+    rect(-200, 0, 1800, 50);
     pop()
     push()
     fill(gray(50))
@@ -4019,7 +4019,7 @@ function homePage() {
   push()
   beginOpac -= 0.001;
   fill(gray(100, beginOpac))
-  rect(0, 0, 1600, 950)
+  rect(-300, 0, 1900, 1000)
   pop()
   push()
   fill(gray(0, beginOpac))

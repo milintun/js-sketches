@@ -183,7 +183,7 @@ function navBar() {
     ageButtonHover = false;
     keywordButtonHover = false;
     fill(gray(100))
-    if (mouseIn(0, 0, 1600, 50)) {
+    if (mouseIn(0, 0, width, 50)) {
         cardHover = {index: undefined, x: undefined, y: undefined, w: undefined, h: undefined};
          if (mouseIn(timelineButtonPos.x - 30, timelineButtonPos.y - 25, 100, 50)) {
              timelineButtonHover = true;
@@ -4024,17 +4024,17 @@ function homePage() {
   pop()
   
   // intro animation
-  push()
-  beginOpac -= 0.001;
-  fill(gray(100, beginOpac))
-  rect(0, 0, width, height)
-  pop()
-  push()
-  fill(gray(0, beginOpac))
-  textSize(25);
-  wrapText("Since 1973, the final words of 593 inmates executed by lethal injection in Texas have been recorded, in addition to the crimes they committed. You are invited to sit with the discomfort in confronting both the sympathy for those asking for forgiveness and saying goodbye to their families, and the stark animosity felt when reading the crimes that placed them on death row.", W, H + 30, width - 200, false, 30);
-  pop()
-  return 'home';
+  // push()
+  // beginOpac -= 0.001;
+  // fill(gray(100, beginOpac))
+  // rect(0, 0, width, height)
+  // pop()
+  // push()
+  // fill(gray(0, beginOpac))
+  // textSize(25);
+  // wrapText("Since 1973, the final words of 593 inmates executed by lethal injection in Texas have been recorded, in addition to the crimes they committed. You are invited to sit with the discomfort in confronting both the sympathy for those asking for forgiveness and saying goodbye to their families, and the stark animosity felt when reading the crimes that placed them on death row.", W, H + 30, width - 200, false, 30);
+  // pop()
+  // return 'home';
 }
 
 /**
@@ -4112,28 +4112,30 @@ function cardPage(randIndex, randFront, fromKeyword=false) {
     stroke(gray(20));
     const offset = width / 2 - 230
 
-    text(`find ${fullName} on the timeline, age, or keyword page.`, offset, 910);
+    const textY = height - 25;
+    const lineY = textY + 2
+
+    text(`find ${fullName} on the timeline, age, or keyword page.`, offset, textY);
     const lineX = offset + textWidth(`find ${fullName} on the `)
-    line(lineX, 912, lineX + 60, 912);
-    line(lineX + 68, 912, lineX + 90, 912);
-    line(lineX + 120, 912, lineX + 180, 912);
+    line(lineX, lineY, lineX + 60, lineY);
+    line(lineX + 68, lineY, lineX + 90, lineY);
+    line(lineX + 120, lineY, lineX + 180, lineY);
 
     // draw interactive navigation buttons to other pages for this card
     push()
     fill('white')
     stroke('white')
-        console.log(width)
-    if (mouseIn(lineX, 900, 60, 20)) {
-      text('timeline', lineX, 910);
-      line(lineX, 912, lineX + 60, 912);
+    if (mouseIn(lineX, textY - 10, 60, 20)) {
+      text('timeline', lineX, textY);
+      line(lineX, lineY, lineX + 60, lineY);
       cardToTimelineHover = true;
-    } else if (mouseIn(lineX + 68, 900, 22, 20)) {
-      text('age', lineX + 67, 910);
-      line(lineX + 68, 912, lineX + 90, 912);
+    } else if (mouseIn(lineX + 68, textY - 10, 22, 20)) {
+      text('age', lineX + 67, textY);
+      line(lineX + 68, lineY, lineX + 90, lineY);
       cardToAgeHover = true;
-    } else if (mouseIn(lineX + 120, 900, 60, 20)) {
-      text('keyword', lineX + 119, 910);
-      line(lineX + 120, 912, lineX + 180, 912);
+    } else if (mouseIn(lineX + 120, textY - 10, 60, 20)) {
+      text('keyword', lineX + 119, textY);
+      line(lineX + 120, lineY, lineX + 180, lineY);
       cardToKeywordHover = true;
     }
     

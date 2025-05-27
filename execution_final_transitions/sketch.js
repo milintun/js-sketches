@@ -70,6 +70,8 @@ function load() {
 }
 
 function setup() {
+  width = window.innerWidth;
+  height = window.innerHeight; 
   size(width, height);
   textAlign(CENTER);
   rectMode(CORNER);
@@ -86,11 +88,11 @@ function setup() {
   backPage = homePage;
   prevMillis = -3;
   expanding = true;
-  timelineButtonPos = {x: 1180, y: 17, w: 100, h: 100};
+  timelineButtonPos = {x: width - 420, y: 17, w: 100, h: 100};
   timelineButtonHover = false;
-  ageButtonPos = {x: 1330, y: 17, w: 100, h: 100};
+  ageButtonPos = {x: width - 270, y: 17, w: 100, h: 100};
   ageButtonHover = false;
-  keywordButtonPos = {x: 1480, y: 17, w: 100, h: 100};
+  keywordButtonPos = {x: width - 120, y: 17, w: 100, h: 100};
   keywordButtonHover = false;
   
   cardButtonPos = {x: W, y: H};
@@ -117,6 +119,7 @@ function setup() {
 function draw() {
   width = window.innerWidth;
   height = window.innerHeight;  
+  size(width, height);
   clear(gray(90));
   backButtonHover = false;
   homeButtonHover = false;
@@ -4027,7 +4030,7 @@ function homePage() {
   push()
   fill(gray(0, beginOpac))
   textSize(25);
-  text("Since 1973, the final words of 593 inmates executed by lethal injection in Texas have been recorded, in addition to the crimes they committed.\nYou are invited to sit with the discomfort in confronting both the sympathy for those asking for forgiveness and saying goodbye to their families,\nand the stark animosity felt when reading the crimes that placed them on death row.", W, H + 30);
+  wrapText("Since 1973, the final words of 593 inmates executed by lethal injection in Texas have been recorded, in addition to the crimes they committed. You are invited to sit with the discomfort in confronting both the sympathy for those asking for forgiveness and saying goodbye to their families, and the stark animosity felt when reading the crimes that placed them on death row.", W, H + 30, width - 200, false, 30);
   pop()
   return 'home';
 }
@@ -4105,8 +4108,10 @@ function cardPage(randIndex, randFront, fromKeyword=false) {
     textAlign(LEFT);
     fill(gray(20));
     stroke(gray(20));
-    text(`find ${fullName} on the timeline, age, or keyword page.`, 570, 910);
-    const lineX = width - 230 + textWidth(`find ${fullName} on the `)
+    const offset = width / 2 - 230
+
+    text(`find ${fullName} on the timeline, age, or keyword page.`, offset, 910);
+    const lineX = offset + textWidth(`find ${fullName} on the `)
     line(lineX, 912, lineX + 60, 912);
     line(lineX + 68, 912, lineX + 90, 912);
     line(lineX + 120, 912, lineX + 180, 912);
@@ -4115,6 +4120,7 @@ function cardPage(randIndex, randFront, fromKeyword=false) {
     push()
     fill('white')
     stroke('white')
+        console.log(width)
     if (mouseIn(lineX, 900, 60, 20)) {
       text('timeline', lineX, 910);
       line(lineX, 912, lineX + 60, 912);
@@ -4167,7 +4173,7 @@ function formatDate(dateString) {
 /**
  * Draw text given maximum width to bound text box by.
  */
-function wrapText(txt, width, height, maxWidth, fromKeyword) {
+function wrapText(txt, width, height, maxWidth, fromKeyword=false, lineGap=20) {
   if (txt === '') {
     txt = 'No last statement given.'
   }
@@ -4200,9 +4206,9 @@ function wrapText(txt, width, height, maxWidth, fromKeyword) {
           sentence.push(word);
         }
       }
-      text(sentence.join(" "), width, height + count * 20)
+      text(sentence.join(" "), width, height + count * lineGap)
     } else {
-      text(line, width, height + count * 20)
+      text(line, width, height + count * lineGap)
     }
     count += 1
   }

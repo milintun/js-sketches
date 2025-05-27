@@ -1,3 +1,5 @@
+import { SoftNum } from `./SoftNum.js`
+
 let data;
 let sorted_age;
 let font;

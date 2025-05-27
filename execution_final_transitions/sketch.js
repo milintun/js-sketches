@@ -70,9 +70,6 @@ function load() {
 }
 
 function setup() {
-
-  width = window.innerWidth;
-  height = window.innerHeight;  
   size(width, height);
   textAlign(CENTER);
   rectMode(CORNER);
@@ -118,6 +115,8 @@ function setup() {
 }
 
 function draw() {
+  width = window.innerWidth;
+  height = window.innerHeight;  
   clear(gray(90));
   backButtonHover = false;
   homeButtonHover = false;
@@ -4037,13 +4036,13 @@ function homePage() {
  * Randomize card order and load into an array.
  */
 function preloadCards() {
-  for (let i = -12800; i < 1600; i += 200) {
-      for (let j = 0; j < 900; j += 100) {
+  for (let i = width - 14400; i < width; i += width / 8) {
+      for (let j = 0; j < height; j += height / 9 ) {
       randIndex = round(random(1, 593));
       while (seenCardDisplays.includes(randIndex)) {
           randIndex = round(random(1, 593));
       }
-      preloadedCards.push({ index: randIndex, x: i, y: j, w: 200, h: 100 })      
+      preloadedCards.push({ index: randIndex, x: i, y: j, w: width / 8, h: height / 9 })      
       }
   }
 }
@@ -4107,7 +4106,7 @@ function cardPage(randIndex, randFront, fromKeyword=false) {
     fill(gray(20));
     stroke(gray(20));
     text(`find ${fullName} on the timeline, age, or keyword page.`, 570, 910);
-    const lineX = 570 + textWidth(`find ${fullName} on the `)
+    const lineX = width - 230 + textWidth(`find ${fullName} on the `)
     line(lineX, 912, lineX + 60, 912);
     line(lineX + 68, 912, lineX + 90, 912);
     line(lineX + 120, 912, lineX + 180, 912);

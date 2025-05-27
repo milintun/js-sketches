@@ -60,6 +60,7 @@ const keywordsDisplay = [['God, Lord, heaven, kingdom, pray, Jesus, Christ'],
 let scrollOffset;
 let visitedCardIndices;
 let pageStack;
+let width; let height;
 
 function load() {
   data = loadTable("final_data_with_timeline.csv", "header", "names");
@@ -69,11 +70,14 @@ function load() {
 }
 
 function setup() {
-  size(1600, 950);
+
+  width = window.innerWidth;
+  height = window.innerHeight;  
+  size(width, height);
   textAlign(CENTER);
   rectMode(CORNER);
-  W = 1600 / 2;
-  H = 900 / 2;
+  W = width / 2;
+  H = height / 2;
   textSize(20);
   stroke("white");
   strokeWeight(1);
@@ -157,7 +161,7 @@ function draw() {
 function navBar() {
     push()
     fill(gray(10));
-    rect(-200, 0, 1800, 50);
+    rect(0, 0, width, 50);
     pop()
     push()
     fill(gray(50))
@@ -4019,7 +4023,7 @@ function homePage() {
   push()
   beginOpac -= 0.001;
   fill(gray(100, beginOpac))
-  rect(-300, 0, 1900, 1000)
+  rect(0, 0, width, height)
   pop()
   push()
   fill(gray(0, beginOpac))

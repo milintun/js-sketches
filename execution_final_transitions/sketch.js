@@ -75,24 +75,17 @@ function setup() {
   size(width, height);
   textAlign(CENTER);
   rectMode(CORNER);
-  W = width / 2;
-  H = height / 2;
   textSize(20);
   stroke("white");
   strokeWeight(1);
   flipCard = false;
   
-  homeButtonPos = {x: 90, y: 32};
-  backButtonPos = {x: 200, y: 32};
   backButtonHover = false;
   backPage = homePage;
   prevMillis = -3;
   expanding = true;
-  timelineButtonPos = {x: width - 420, y: 17, w: 100, h: 100};
   timelineButtonHover = false;
-  ageButtonPos = {x: width - 270, y: 17, w: 100, h: 100};
   ageButtonHover = false;
-  keywordButtonPos = {x: width - 120, y: 17, w: 100, h: 100};
   keywordButtonHover = false;
   
   cardButtonPos = {x: W, y: H};
@@ -119,6 +112,15 @@ function setup() {
 function draw() {
   width = window.innerWidth;
   height = window.innerHeight;  
+  W = width / 2;
+  H = height / 2;
+
+  homeButtonPos = {x: 90, y: 32};
+  backButtonPos = {x: 200, y: 32};
+  timelineButtonPos = {x: width - 420, y: 17, w: 100, h: 100};
+  ageButtonPos = {x: width - 270, y: 17, w: 100, h: 100};
+  keywordButtonPos = {x: width - 120, y: 17, w: 100, h: 100};
+
   size(width, height);
   clear(gray(90));
   backButtonHover = false;
@@ -4095,7 +4097,7 @@ function cardPage(randIndex, randFront, fromKeyword=false) {
   }
     text(title, W, H - 70)
     line(W - 100, H - 40, W + 100, H - 40)
-    wrapText(info, W, H + 10, 1200, fromKeyword)
+    wrapText(info, W, H + 10, width - 300, fromKeyword)
     
     // find on other pages
     cardToTimelineHover = false;
